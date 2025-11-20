@@ -1,0 +1,334 @@
+ <!DOCTYPE html>
+                        <html lang="zh-CN">
+
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <title>在线简历生成器 - 多模板专业版</title>
+                            <meta name="description" content="在线简历制作，多种精美模板，实时预览，一键下载PDF">
+                            <link rel="stylesheet" href="styles.css">
+                            <link
+                                href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+                                rel="stylesheet">
+                        </head>
+
+                        <body>
+                                <!-- Header -->
+                                <header class="header">
+                                    <div class="header-content">
+                                        <div class="logo">
+                                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                                <rect width="32" height="32" rx="8" fill="url(#gradient1)" />
+                                                <path d="M8 12h16M8 16h16M8 20h10" stroke="white" stroke-width="2"
+                                                    stroke-linecap="round" />
+                                                <defs>
+                                                    <linearGradient id="gradient1" x1="0" y1="0" x2="32" y2="32">
+                                                        <stop offset="0%" stop-color="#6366f1" />
+                                                        <stop offset="100%" stop-color="#8b5cf6" />
+                                                    </linearGradient>
+                                                </defs>
+                                            </svg>
+                                            <h1>智能简历生成器</h1>
+                                        </div>
+                                        <div class="header-actions">
+                                            <button class="btn btn-secondary" id="resetBtn">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                                    <path
+                                                        d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                                    <path
+                                                        d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                                </svg>
+                                                重置
+                                            </button>
+                                            <button class="btn btn-primary" id="downloadBtn">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                                    <path
+                                                        d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+                                                    <path
+                                                        d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+                                                </svg>
+                                                下载PDF
+                                            </button>
+                                            <a href="https://github.com/lgcheng01/resume.git" target="_blank" class="btn btn-secondary" style="text-decoration: none;">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                                                </svg>
+                                                GitHub
+                                            </a>
+                                        </div>
+                                    </div>
+                                </header>
+
+                                <!-- Main Content -->
+                                <div class="main-content">
+                                    <!-- Left Section: Menu + Form -->
+                                    <div class="left-section">
+                                        <!-- Sidebar Menu -->
+                                        <aside class="sidebar">
+                                            <nav class="tabs">
+                                            <button class="tab-item active" data-tab="avatar">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" />
+                                                </svg>
+                                                头像
+                                            </button>
+                                            <button class="tab-item" data-tab="basic">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path
+                                                        d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6z" />
+                                                </svg>
+                                                基本
+                                            </button>
+                                            <button class="tab-item" data-tab="education">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path
+                                                        d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3z" />
+                                                </svg>
+                                                教育
+                                            </button>
+                                            <button class="tab-item" data-tab="skills">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5z" />
+                                                </svg>
+                                                技能
+                                            </button>
+                                            <button class="tab-item" data-tab="work">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd"
+                                                        d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2z" />
+                                                </svg>
+                                                工作
+                                            </button>
+                                            <button class="tab-item" data-tab="projects">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path
+                                                        d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4z" />
+                                                    <path fill-rule="evenodd"
+                                                        d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8z" />
+                                                </svg>
+                                                项目
+                                            </button>
+                                            <button class="tab-item" data-tab="more">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path
+                                                        d="M6 10a2 2 0 11-4 0 2 2 0 014 0zM12 10a2 2 0 11-4 0 2 2 0 014 0zM16 12a2 2 0 100-4 2 2 0 000 4z" />
+                                                </svg>
+                                                更多
+                                            </button>
+                                            </nav>
+                                        </aside>
+
+                                        <!-- Form Container -->
+                                        <div class="form-container">
+                                                <!-- Avatar Settings -->
+                                                <div class="form-panel active" id="panel-avatar">
+                                                    <h2 class="panel-title">头像设置</h2>
+
+                                                    <div class="form-group">
+                                                        <label>头像图片</label>
+                                                        <input type="file" id="avatarInput" accept="image/*"
+                                                            class="file-input">
+                                                        <div class="avatar-preview" id="avatarPreview">
+                                                            <span class="placeholder-text">点击上传头像</span>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>是否显示头像</label>
+                                                        <label class="toggle">
+                                                            <input type="checkbox" id="showAvatar" checked>
+                                                            <span class="toggle-slider"></span>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>选择模板</label>
+                                                        <div class="template-grid">
+                                                            <button class="template-card active" data-template="modern">
+                                                                <div class="template-preview modern-preview">
+                                                                </div>
+                                                                <span>现代风格</span>
+                                                            </button>
+                                                            <button class="template-card" data-template="classic">
+                                                                <div class="template-preview classic-preview">
+                                                                </div>
+                                                                <span>经典风格</span>
+                                                            </button>
+                                                            <button class="template-card" data-template="creative">
+                                                                <div class="template-preview creative-preview">
+                                                                </div>
+                                                                <span>创意风格</span>
+                                                            </button>
+                                                            <button class="template-card" data-template="professional">
+                                                                <div class="template-preview professional-preview">
+                                                                </div>
+                                                                <span>专业风格</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>主题颜色</label>
+                                                        <div class="color-palette">
+                                                            <button class="color-option active" data-color="indigo"
+                                                                style="background: linear-gradient(135deg, #6366f1, #8b5cf6);"></button>
+                                                            <button class="color-option" data-color="blue"
+                                                                style="background: linear-gradient(135deg, #3b82f6, #06b6d4);"></button>
+                                                            <button class="color-option" data-color="green"
+                                                                style="background: linear-gradient(135deg, #10b981, #059669);"></button>
+                                                            <button class="color-option" data-color="purple"
+                                                                style="background: linear-gradient(135deg, #8b5cf6, #a855f7);"></button>
+                                                            <button class="color-option" data-color="red"
+                                                                style="background: linear-gradient(135deg, #ef4444, #f97316);"></button>
+                                                            <button class="color-option" data-color="dark"
+                                                                style="background: linear-gradient(135deg, #1f2937, #374151);"></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Basic Info -->
+                                                <div class="form-panel" id="panel-basic">
+                                                    <h2 class="panel-title">基本信息</h2>
+
+                                                    <div class="form-group">
+                                                        <label>姓名 *</label>
+                                                        <input type="text" id="name" placeholder="请输入您的姓名"
+                                                            class="input">
+                                                    </div>
+
+                                                    <div class="form-row">
+                                                        <div class="form-group">
+                                                            <label>性别</label>
+                                                            <select id="gender" class="input">
+                                                                <option value="">请选择</option>
+                                                                <option value="男">男</option>
+                                                                <option value="女">女</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>年龄</label>
+                                                            <input type="number" id="age" placeholder="年龄"
+                                                                class="input">
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>联系电话</label>
+                                                        <input type="tel" id="phone" placeholder="请输入联系电话"
+                                                            class="input">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>电子邮箱</label>
+                                                        <input type="email" id="email" placeholder="example@email.com"
+                                                            class="input">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>求职岗位</label>
+                                                        <input type="text" id="position" placeholder="请输入期望岗位"
+                                                            class="input">
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label>个人优势</label>
+                                                        <textarea id="summary" rows="4" placeholder="简要介绍您的个人优势和特长..."
+                                                            class="input"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Education -->
+                                                <div class="form-panel" id="panel-education">
+                                                    <h2 class="panel-title">教育背景</h2>
+                                                    <div id="educationList"></div>
+                                                    <button class="btn btn-add" id="addEducation">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16"
+                                                            fill="currentColor">
+                                                            <path
+                                                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2z" />
+                                                        </svg>
+                                                        添加教育经历
+                                                    </button>
+                                                </div>
+
+                                                <!-- Skills -->
+                                                <div class="form-panel" id="panel-skills">
+                                                    <h2 class="panel-title">专业技能</h2>
+                                                    <div id="skillsList"></div>
+                                                    <button class="btn btn-add" id="addSkill">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16"
+                                                            fill="currentColor">
+                                                            <path
+                                                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2z" />
+                                                        </svg>
+                                                        添加技能
+                                                    </button>
+                                                </div>
+
+                                                <!-- Work Experience -->
+                                                <div class="form-panel" id="panel-work">
+                                                    <h2 class="panel-title">工作经历</h2>
+                                                    <div id="workList"></div>
+                                                    <button class="btn btn-add" id="addWork">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16"
+                                                            fill="currentColor">
+                                                            <path
+                                                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2z" />
+                                                        </svg>
+                                                        添加工作经历
+                                                    </button>
+                                                </div>
+
+                                                <!-- Projects -->
+                                                <div class="form-panel" id="panel-projects">
+                                                    <h2 class="panel-title">项目经历</h2>
+                                                    <div id="projectsList"></div>
+                                                    <button class="btn btn-add" id="addProject">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16"
+                                                            fill="currentColor">
+                                                            <path
+                                                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2z" />
+                                                        </svg>
+                                                        添加项目经历
+                                                    </button>
+                                                </div>
+
+                                                <!-- More Info -->
+                                                <div class="form-panel" id="panel-more">
+                                                    <h2 class="panel-title">更多信息</h2>
+                                                    <div id="moreInfoList"></div>
+                                                    <button class="btn btn-add" id="addMoreInfo">
+                                                        <svg width="16" height="16" viewBox="0 0 16 16"
+                                                            fill="currentColor">
+                                                            <path
+                                                                d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2z" />
+                                                        </svg>
+                                                        添加更多信息
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <!-- Preview -->
+                                    <main class="preview-section">
+                                        <div class="preview-container">
+                                            <div class="preview-paper" id="resumePreview">
+                                                <!-- Resume content will be rendered here -->
+                                            </div>
+                                        </div>
+                                    </main>
+                                </div>
+
+
+                            <script
+                                src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+                              
+                            <script src="app.js"></script>
+
+                           
+                        </body>
+
+                        </html>
